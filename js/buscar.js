@@ -6,10 +6,11 @@ async function buscar() {
     const cards = document.getElementById("cards_games")
 
     cards.innerHTML = respostaDadosAgenda.map((itemAgenda) => {
+        var dataAgenda = new Date(itemAgenda.dataJogo)
         return `
         <div class="cardItem">
             <div class="dataGame"> 
-                <img src="../imagens/calendar-solid.svg" alt=""> ${itemAgenda.dataJogo} 21:30 
+                <img src="../imagens/calendar-solid.svg" alt=""> ${dataAgenda.getDay()}/${dataAgenda.getMonth()}/${dataAgenda.getFullYear()} 21:30 
             </div>
             <img class="img-background" src="${itemAgenda.urlImagem}" alt="">
             <div class="descricao">
